@@ -45,5 +45,14 @@ public class MedicoController {
   @GetMapping("/")
   public Page<DadosListagemMedico> listar(Pageable paginacao) {
     return repository.findAll(paginacao).map(DadosListagemMedico::new);
+
+    // na url da requisição podemos passar parametros para melhorar ainda mais a
+    // paginação:
+    // size=x (numero de registros que vem da consulta, padrao e 20)
+    // page=y (numero da pagina que contem os registros)
+    // sort=(atributo da entidade) >> Faz a ordenção apartir do atributo
+    // Exemplo
+    // http://localhost:8080/medicos/?size=3&page=3
+    // http://localhost:8080/medicos/?sort=nome
   }
 }
