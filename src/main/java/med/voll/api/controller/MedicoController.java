@@ -50,9 +50,13 @@ public class MedicoController {
     // paginação:
     // size=x (numero de registros que vem da consulta, padrao e 20)
     // page=y (numero da pagina que contem os registros)
-    // sort=(atributo da entidade) >> Faz a ordenção apartir do atributo
+    // sort=(atributo da entidade) >> Faz a ordenção apartir do atributo padrao do
+    // menor para o maior
+    // se quisermos inverter basta colocar depois do atributo ,desc
     // Exemplo
     // http://localhost:8080/medicos/?size=3&page=3
     // http://localhost:8080/medicos/?sort=nome
+    // http://localhost:8080/medicos/?sort=nome,desc
+    // http://localhost:8080/medicos/?size=2&sort=nome,desc&page=0
   }
 }
