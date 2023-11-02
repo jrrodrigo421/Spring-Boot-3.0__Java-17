@@ -1,5 +1,9 @@
 package med.voll.api.medico;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -38,6 +42,9 @@ public class Medico {
 
   @Embedded
   private Endereco endereco;
+
+  @CreationTimestamp
+  private LocalDateTime data_criacao;
 
   public Medico(DadosCadastroMedico dados) {
 
