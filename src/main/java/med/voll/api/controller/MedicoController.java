@@ -14,11 +14,6 @@ public class MedicoController {
   @PostMapping
   public void cadastrar(@RequestBody DadosCadastroMedico json) {
 
-    System.out.println(json.nome());
-    System.out.println(json.email());
-    System.out.println(json.crm());
-    System.out.println(json.especialidade());
-
     System.out.println("\n IMPRIMINDO json: \n\n " + json);
   }
 }
