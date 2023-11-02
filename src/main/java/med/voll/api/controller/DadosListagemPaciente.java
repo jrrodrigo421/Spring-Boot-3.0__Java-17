@@ -1,7 +1,9 @@
 package med.voll.api.controller;
 
-public record DadosListagemPaciente(
-    String nome, String email,
-    String crm) {
+import med.voll.api.paciente.Paciente;
 
+public record DadosListagemPaciente(String nome, String email, String cpf) {
+    public DadosListagemPaciente(Paciente paciente) {
+        this(paciente.getNome(), paciente.getEmail(), paciente.getCpf());
+    }
 }
