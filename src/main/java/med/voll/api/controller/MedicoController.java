@@ -63,6 +63,7 @@ public class MedicoController {
   }
 
   @PutMapping("/")
+  @Transactional
   public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
     System.out.println("IMPRIMINDO dados\n\n" + dados);
     var medico = repository.getReferenceById(dados.id());
