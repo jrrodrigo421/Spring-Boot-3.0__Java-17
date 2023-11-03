@@ -61,7 +61,11 @@ public class Medico {
 
   public void atualizarInfo(@Valid DadosAtualizacaoMedico dados) {
     if (dados.nome() != null) {
+      System.out.println("dados.nome() " + dados.nome());
+      System.out.println("this.nome " + this.nome);
       this.nome = dados.nome();
+      System.out.println("entrou aqui " + this.nome);
+
     }
     if (dados.telefone() != null) {
       this.telefone = dados.telefone();
