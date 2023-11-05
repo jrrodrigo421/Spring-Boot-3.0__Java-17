@@ -2,6 +2,7 @@ package med.voll.api.medico;
 
 import java.time.LocalDateTime;
 
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Embedded;
@@ -36,6 +37,7 @@ public class Medico {
 
   private String email;
   private String crm;
+  private Boolean ativo;
 
   private String telefone;
 
@@ -50,6 +52,7 @@ public class Medico {
 
   public Medico(DadosCadastroMedico dados) {
 
+    this.ativo = true;
     this.nome = dados.nome();
     this.email = dados.email();
     this.crm = dados.crm();
@@ -73,6 +76,11 @@ public class Medico {
     if (dados.endereco() != null) {
       this.endereco.atualizarInfoEnd(dados.endereco());
     }
+
+  }
+
+  public void exlcuir() {
+    this.ativo = false;
 
   }
 
